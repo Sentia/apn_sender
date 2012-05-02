@@ -19,7 +19,20 @@ This gem has been in production use since early May, 2010.  There are no guarant
 
 == Usage
 
-=== 1. Queueing Messages From Your Application
+=== 1. Setup
+
+You must set the queue name to be used in an initializer, the name you use must be in the format `apn_#{appname}_#{environment}`
+
+Here is an example for an application named beans
+
+  if Rails.env.production?
+    APN::Config.queue_name = "apn_beans_production"
+  else
+    APN::Config.queue_name = "apn_beans_development"
+  end
+
+
+=== 2. Queueing Messages From Your Application
 
 To queue a message for sending through Apple's Push Notification service from your Rails application:
 
@@ -33,9 +46,9 @@ where +token+ is the unique identifier of the iPhone to receive the notification
 
 If any other keys are present they'll be be passed along as custom data to your application.
 
-=== 2. Sending Queued Messages
+=== 3. Sending Queued Messages
 
-Put your <code>apn_development.pem</code> and <code>apn_production.pem</code> certificates from Apple in your <code>RAILS_ROOT/config/certs</code> directory.
+Put your <code>apn_development.pem</code> and <code>apn_production.pem</code> certificates from Apple in your <code>RAILS_ROOT/config/certs/APPNAME</code> directory.
 
 Once this is done, you can fire off a background worker with
 
@@ -47,7 +60,7 @@ For production, you're probably better off running a dedicated daemon and settin
   ./script/generate apn_sender
 
   # To run daemon. Pass --help to print all options
-  ./script/apn_sender --environment=production --verbose start
+  ./script/apn_sender --environment=production --verbose --application appname start
 
 Note the --environment must be explicitly set (separately from your <code>RAILS_ENV</code>) to production in order to send messages via the production APN servers.  Any other environment sends messages through Apple's sandbox servers at <code>gateway.sandbox.push.apple.com</code>.
 
