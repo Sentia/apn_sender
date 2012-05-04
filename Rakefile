@@ -10,7 +10,7 @@ begin
     gem.summary = %Q{Resque-based background worker to send Apple Push Notifications over a persistent TCP socket. Original gem by Kali Donovan and modified by Sentia.}
     gem.description = %Q{Resque-based background worker to send Apple Push Notifications over a persistent TCP socket. Includes Resque tweaks to allow persistent sockets between jobs, helper methods for enqueueing APN notifications, and a background daemon to send them. Original gem by Kali Donovan and modified by Sentia.}
     gem.email = "mario.visic@sentia.com.au"
-    gem.homepage = "http://github.com/sentia/apple_push_notification"
+    gem.homepage = 'https://github.com/sentia/apn_sender'
     gem.authors = ['Kali Donovan', 'Mario Visic']
     gem.add_dependency 'resque'
     gem.add_dependency 'resque-access_worker_from_job'

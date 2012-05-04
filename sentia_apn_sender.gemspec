@@ -43,7 +43,7 @@ Gem::Specification.new do |s|
     "test/helper.rb",
     "test/test_apple_push_notification.rb"
   ]
-  s.homepage = "http://github.com/sentia/apple_push_notification"
+  s.homepage = "https://github.com/sentia/apn_sender"
   s.require_paths = ["lib"]
   s.rubygems_version = "1.8.16"
   s.summary = "Resque-based background worker to send Apple Push Notifications over a persistent TCP socket. Original gem by Kali Donovan and modified by Sentia."
