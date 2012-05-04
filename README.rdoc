@@ -1,3 +1,7 @@
+== Sentia Modifications
+
+This great gem was originally created by Kali Donovan. The project has been modified by Sentia to provide the ability to use custom resque queues and to allow sending via multiple certificates in the same application.
+
 == Synopsis
 
 Need to send background notifications to an iPhone application over a <em>persistent</em> connection in Ruby? Keep reading...

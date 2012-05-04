@@ -6,12 +6,12 @@ load 'lib/apn/tasks.rb'
 begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
-    gem.name = "apn_sender"
+    gem.name = "sentia_apn_sender"
     gem.summary = %Q{Resque-based background worker to send Apple Push Notifications over a persistent TCP socket.}
     gem.description = %Q{Resque-based background worker to send Apple Push Notifications over a persistent TCP socket. Includes Resque tweaks to allow persistent sockets between jobs, helper methods for enqueueing APN notifications, and a background daemon to send them.}
-    gem.email = "kali.donovan@gmail.com"
-    gem.homepage = "http://github.com/kdonovan/apple_push_notification"
-    gem.authors = ["Kali Donovan"]
+    gem.email = "mario.visic@sentia.com.au"
+    gem.homepage = "http://github.com/sentia/apple_push_notification"
+    gem.authors = ['Kali Donovan', 'Mario Visic']
     gem.add_dependency 'resque'
     gem.add_dependency 'resque-access_worker_from_job'
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
