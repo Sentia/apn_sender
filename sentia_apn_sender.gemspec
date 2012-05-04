@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Kali Donovan", "Mario Visic"]
   s.date = "2012-05-04"
-  s.description = "Resque-based background worker to send Apple Push Notifications over a persistent TCP socket. Includes Resque tweaks to allow persistent sockets between jobs, helper methods for enqueueing APN notifications, and a background daemon to send them."
+  s.description = "Resque-based background worker to send Apple Push Notifications over a persistent TCP socket. Includes Resque tweaks to allow persistent sockets between jobs, helper methods for enqueueing APN notifications, and a background daemon to send them. Original gem by Kali Donovan and modified by Sentia."
   s.email = "mario.visic@sentia.com.au"
   s.extra_rdoc_files = [
     "LICENSE",
@@ -22,7 +22,6 @@ Gem::Specification.new do |s|
     "README.rdoc",
     "Rakefile",
     "VERSION",
-    "apn_sender.gemspec",
     "contrib/apn_sender.monitrc",
     "generators/apn_sender_generator.rb",
     "generators/templates/script",
@@ -37,16 +36,17 @@ Gem::Specification.new do |s|
     "lib/apn/sender.rb",
     "lib/apn/sender_daemon.rb",
     "lib/apn/tasks.rb",
-    "lib/apn_sender.rb",
     "lib/resque/hooks/before_unregister_worker.rb",
+    "lib/sentia_apn_sender.rb",
     "rails/init.rb",
+    "sentia_apn_sender.gemspec",
     "test/helper.rb",
     "test/test_apple_push_notification.rb"
   ]
   s.homepage = "http://github.com/sentia/apple_push_notification"
   s.require_paths = ["lib"]
   s.rubygems_version = "1.8.16"
-  s.summary = "Resque-based background worker to send Apple Push Notifications over a persistent TCP socket."
+  s.summary = "Resque-based background worker to send Apple Push Notifications over a persistent TCP socket. Original gem by Kali Donovan and modified by Sentia."
 
   if s.respond_to? :specification_version then
     s.specification_version = 3
