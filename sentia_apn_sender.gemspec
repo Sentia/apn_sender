@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = "sentia_apn_sender"
-  s.version = "1.0.5"
+  s.version = "1.0.6"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Kali Donovan", "Mario Visic"]
@@ -28,6 +28,7 @@ Gem::Specification.new do |s|
     "init.rb",
     "lib/apn.rb",
     "lib/apn/connection/base.rb",
+    "lib/apn/before_unregister_worker_support.rb",
     "lib/apn/feedback.rb",
     "lib/apn/notification.rb",
     "lib/apn/notification_job.rb",
