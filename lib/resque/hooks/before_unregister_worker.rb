@@ -11,20 +11,5 @@ module Resque
       run_hook(:before_unregister_worker, self) 
       unregister_worker_without_before_hook
     end
-    
-    
-    # Unforunately have to override Resque::Worker's +run_hook+ method to call hook on 
-    # APN::QueueManager rather on Resque directly. Any suggestions on
-    # how to make this more flexible are more than welcome.
-    def run_hook(name, *args)
-      # return unless hook = Resque.send(name)
-      return unless hook = APN::QueueManager.send(name)
-      msg = "Running #{name} hook"
-      msg << " with #{args.inspect}" if args.any?
-      log msg
-
-      args.any? ? hook.call(*args) : hook.call
-    end
-    
   end
 end

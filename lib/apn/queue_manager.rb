@@ -13,14 +13,7 @@ module APN
   # functionality in the parent app, if we're included in e.g. a Rails application.
   class QueueManager
     extend Resque
-
-    def self.before_unregister_worker(&block)
-      block ? (@before_unregister_worker = block) : @before_unregister_worker
-    end
-
-    def self.before_unregister_worker=(before_unregister_worker)
-      @before_unregister_worker = before_unregister_worker
-    end
+    extend BeforeUnregisterSupport
 
     def self.to_s
       "APN::QueueManager (Resque Client) connected to #{redis.server}"
@@ -42,7 +35,6 @@ end
 APN::QueueManager.before_unregister_worker do |worker|
   worker.send(:teardown_connection) if worker.respond_to?(:teardown_connection)
 end
-
 
 # # Run N jobs per fork, rather than creating a new fork for each notification
 # # By defunkt - http://gist.github.com/349376

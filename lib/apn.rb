@@ -1,4 +1,5 @@
 require 'resque'
+require 'apn/before_unregister_worker_support'
 require 'resque/plugins/access_worker_from_job'
 require 'resque/hooks/before_unregister_worker'
 require 'json'
